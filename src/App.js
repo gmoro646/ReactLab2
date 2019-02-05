@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import HeaderApp from './components/HeaderApp.js';
 import PhotoBrowser from './components/PhotoBrowser.js';
 import * as cloneDeep from 'lodash/cloneDeep';
-
+import {Route} from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About"
 
 class App extends Component {
 
@@ -15,10 +17,19 @@ class App extends Component {
         return (
             <div>
                 <HeaderApp/>
-                <PhotoBrowser
-                    photos={this.state.photos}
-                    updatePhoto={this.updatePhoto}
+                <Route path='/' exact component={Home}/>
+                <Route path='/home' exact component={Home}/>
+                <Route path='/about' exact component={About}/>
+                <Route path='/browse' exact
+                render={(props)=>
+                    <PhotoBrowser
+                        photos={this.state.photos}
+                        updatePhoto={this.updatePhoto}
+                    />
+                }
+
                 />
+
             </div>
         );
     }
