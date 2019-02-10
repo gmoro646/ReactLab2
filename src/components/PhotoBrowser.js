@@ -6,13 +6,19 @@ import Favorites from "./Favorites";
 class PhotoBrowser extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {currentPhoto: 1};
+        this.state = {
+            currentPhoto: 1,
+            favorites:[]
+
+        };
     }
 
     render() {
+        console.log(this.state.favorites);
         return (
 
-            <section className="container">
+            <div className="container">
+
                 <PhotoList photos={this.props.photos}
                            showImageDetails={this.showImageDetails}/>
 
@@ -20,7 +26,7 @@ class PhotoBrowser extends React.Component {
                                   currentPhoto={this.state.currentPhoto}
                                   updatePhoto={this.props.updatePhoto}
                 />
-            </section>
+            </div>
 
         );
     }
@@ -28,6 +34,14 @@ class PhotoBrowser extends React.Component {
     showImageDetails = (id) => {
         this.setState({currentPhoto: id});
     }
+
+    addFavourites=(id)=>{
+        let fave= this.state.favorites.slice();
+        fave.push(id);
+        this.setState({favorites:fave});
+    }
+
+
 
 }
 

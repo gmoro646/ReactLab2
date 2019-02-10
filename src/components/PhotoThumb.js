@@ -1,6 +1,7 @@
 import React from 'react';
 
 class PhotoThumb extends React.Component {
+
     render() {
         const imgURL = `https://storage.googleapis.com/funwebdev-3rd-travel/square-medium/${this.props.photo.path}`;
         return (
@@ -13,7 +14,7 @@ class PhotoThumb extends React.Component {
                     <h3>{this.props.photo.title}</h3>
                     <p>{this.props.photo.city}, {this.props.photo.country}</p>
                     <button onClick={this.handleViewClick}>View</button>
-                    <button onClick>❤</button>
+                    <button onClick={this.favouriteHandler}>❤</button>
                 </div>
             </div>
 
@@ -23,10 +24,10 @@ class PhotoThumb extends React.Component {
     handleViewClick = () => {
         this.props.showImageDetails(this.props.photo.id);
     }
-    favouriteHandler=()=>{
 
-
-    }
+    // favouriteHandler = () => {
+    //     this.props.addFavorites(this.props.photo.id);
+    // }
 }
 
 export default PhotoThumb

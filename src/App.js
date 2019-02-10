@@ -13,7 +13,6 @@ class App extends Component {
         super(props);
         this.state = {
             photos: [],
-            FavouritePhotos: []
         };
     }
 
@@ -22,7 +21,7 @@ class App extends Component {
 
             <div>
                 <HeaderApp/>
-                <Favorites/>
+                <Favorites favourites={this.showFavourites()}/>
                 <Route path='/' exact component={Home}/>
                 <Route path='/home' exact component={Home}/>
                 <Route path='/about' exact component={About}/>
@@ -63,6 +62,11 @@ class App extends Component {
         photoToReplace.city = photo.city;
         photoToReplace.country = photo.country;
         this.setState({photos: copyPhotos});
+    }
+    showFavourites = (id) => {
+        const fave=this.state.fave;
+
+        // this.setState({: id});
     }
 
 
