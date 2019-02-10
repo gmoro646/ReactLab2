@@ -13,7 +13,6 @@ class PhotoBrowser extends React.Component {
         return (
 
             <section className="container">
-                <Favorites/>
                 <PhotoList photos={this.props.photos}
                            showImageDetails={this.showImageDetails}/>
 
