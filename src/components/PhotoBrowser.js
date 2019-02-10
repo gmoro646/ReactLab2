@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoList from './PhotoList.js'
 import EditPhotoDetails from './EditPhotoDetails.js'
+import Favorites from "./Favorites";
 
 class PhotoBrowser extends React.Component {
     constructor(props) {
@@ -10,7 +11,9 @@ class PhotoBrowser extends React.Component {
 
     render() {
         return (
+
             <section className="container">
+                <Favorites/>
                 <PhotoList photos={this.props.photos}
                            showImageDetails={this.showImageDetails}/>
 

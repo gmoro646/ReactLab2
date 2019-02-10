@@ -5,28 +5,35 @@ import * as cloneDeep from 'lodash/cloneDeep';
 import {Route} from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About"
+import Favorites from "./components/Favorites";
 
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {photos: []};
+        this.state = {
+            photos: [],
+            FavouritePhotos: []
+        };
     }
 
     render() {
         return (
+
             <div>
                 <HeaderApp/>
+                <Favorites/>
                 <Route path='/' exact component={Home}/>
                 <Route path='/home' exact component={Home}/>
                 <Route path='/about' exact component={About}/>
                 <Route path='/browse' exact
-                render={(props)=>
-                    <PhotoBrowser
-                        photos={this.state.photos}
-                        updatePhoto={this.updatePhoto}
-                    />
-                }
+                       render={(props) =>
+
+                           <PhotoBrowser
+                               photos={this.state.photos}
+                               updatePhoto={this.updatePhoto}
+                           />
+                       }
 
                 />
 

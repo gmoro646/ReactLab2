@@ -9,7 +9,6 @@ class EditPhotoDetails extends React.Component {
         if (this.props.photos.length > 0) {
             const photo = this.props.photos.find (p => p.id === id);
 
-
             return (
                 <article className="details">
                     <div className="detailsPhotoBox">
