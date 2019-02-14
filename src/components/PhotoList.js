@@ -11,6 +11,7 @@ class PhotoList extends React.Component {
                             photo={p}
                             key={p.id}
                             showImageDetails={this.props.showImageDetails}
+                            addFavorites={this.props.addFavorites}
                         />)}
 
                 </article>

@@ -25,9 +25,10 @@ class PhotoThumb extends React.Component {
         this.props.showImageDetails(this.props.photo.id);
     }
 
-    // favouriteHandler = () => {
-    //     this.props.addFavorites(this.props.photo.id);
-    // }
+    favouriteHandler = () => {
+        console.log(this.props.photo.id);
+        this.props.addFavorites(this.props.photo.id);
+    }
 }
 
 export default PhotoThumb

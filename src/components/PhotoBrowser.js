@@ -16,30 +16,36 @@ class PhotoBrowser extends React.Component {
     render() {
         console.log(this.state.favorites);
         return (
+            <section>
+                {/*<Favorites favorites={this.state.favorites}*/}
+                           {/*// addFavorites={this.addFavorites}*/}
+                {/*/>*/}
+                <div className="container">
 
-            <div className="container">
+                    <PhotoList photos={this.props.photos}
+                               showImageDetails={this.showImageDetails}
+                               addFavorites={this.addFavorites}
+                    />
 
-                <PhotoList photos={this.props.photos}
-                           showImageDetails={this.showImageDetails}/>
+                    <EditPhotoDetails photos={this.props.photos}
+                                      currentPhoto={this.state.currentPhoto}
+                                      updatePhoto={this.props.updatePhoto}
+                    />
+                </div>
+            </section>
 
-                <EditPhotoDetails photos={this.props.photos}
-                                  currentPhoto={this.state.currentPhoto}
-                                  updatePhoto={this.props.updatePhoto}
-                />
-            </div>
 
         );
     }
 
     showImageDetails = (id) => {
         this.setState({currentPhoto: id});
-    }
+    };
 
-    addFavourites=(id)=>{
-        let fave= this.state.favorites.slice();
-        fave.push(id);
-        this.setState({favorites:fave});
-    }
+    addFavorites=(id)=>{
+        const fave=this.state.favorites;
+        // this.setState( {favorites: id});
+    };
 
 
 

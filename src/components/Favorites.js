@@ -1,13 +1,35 @@
 import React from 'react'
 import FavouriteItem from './FavoriteItem'
+import PhotoThumb from "./PhotoList";
 
 const favorites = (props) => {
-    console.log(props.id);
     return (
-        <section className="favorites">
-            <p>Favourites❤</p>
-            <FavouriteItem/>
-        </section>)
+        <p></p>
+        )
+
+    // render() {
+    //     if (this.props.photos.length > 1) {
+    //         return (
+    //             <article className="photos">
+    //                 {this.props.photos.map((p) =>
+    //                     <PhotoThumb
+    //                         photo={p}
+    //                         key={p.id}
+    //                         showImageDeta   ils={this.props.showImageDetails}
+    //                     />)}
+    //
+    //             </article>
+    //
+    //         );
+    //     } else {
+    //         return null;
+    //     }
+    // console.log(props.id);
+    // return (
+    //     <section className="favorites">
+    //         <p>Favourites❤</p>
+    //         <FavouriteItem/>
+    //     </section>)
 
 };
 export default favorites

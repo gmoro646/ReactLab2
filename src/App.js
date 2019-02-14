@@ -21,7 +21,6 @@ class App extends Component {
 
             <div>
                 <HeaderApp/>
-                <Favorites favourites={this.showFavourites()}/>
                 <Route path='/' exact component={Home}/>
                 <Route path='/home' exact component={Home}/>
                 <Route path='/about' exact component={About}/>
